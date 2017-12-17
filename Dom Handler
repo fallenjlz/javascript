@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="Click Me" onclick="alert(event.type)">
+	<input type="button" value="Click Me" onclick="alert(this.value)">
+	<input type="button" id="myBtn">
+    <script type="text/javascript">
+    	//DOM Leval 0 Event Handlers
+         var btn = document.getElementById("myBtn");
+         btn.onclick = function(){
+         	alert("Clicked");
+         	alert("this.id")
+         }
+
+        //DOM Level 2 Event Handlers
+        var btn = document.getElementById("myBtn");
+        btn.addEvenetListener("click", function(){
+        	alert(this.id);
+        });
+        btn.addEvenetListener("click", function(){
+        	alert("Hello world!");
+        },false);
+        btn.removeEventListener("click", function(){
+        	alert(this.id);
+        },false);
+
+
+
+        //Cross-Browser Event Handlers
+        var btn = document.getElementById("myBtn");
+        var handler = function(){
+        	alert("Clicked");
+        }
+        EventUtil.addHandler(btn, "click", handler);
+        EventUtil.removeHandler(btn, 'click', handler);
+
+        //The Dom Event Object
+        var btn = document.getElementById("myBtn");
+        btn.onclick = funtion(event){
+        	alert(this.type);
+        }
+        btn.addEvenetListener("click", function(event){
+        	alert(event.type);
+        },false);
+        btn.onclick = function(event){
+        	alert(event.currentTarget === this);
+        	alert(event.target === this);
+        };
+
+        document.body.onclick = function(event){
+        	alert(event.currentTarget === document.body);
+        	alert(this === document.body);
+        	alert(event.target === document.getElementById("myBtn"));
+        }
+
+        var btn = document.getElementById("myBtn");
+        var handler = function(event){
+        	switch(event.type){
+        		case "click":
+        		    alert("Clicked");
+        		    break;
+        		case  "mouseover":
+        		     event.target.style.backgroundColor = "red";
+        		     break;
+        		case "mouseout":
+        		     event.target.style.backgrounColor = "";
+        		     break;
+        	}
+        };
+        btn.onclick = handler;
+        btn.onmouseover = handler;
+        btn.onmouseout = handler;
+
+
+        var link = document.getElementById("myLink");
+        link.onclick = function(event){
+        	event.preventDefault();
+        };
+
+        var btn = document.getElementById("myBtn");
+        btn.onclick = function(event){
+        	alert("Clicked");
+        	event.stopPropagation();
+        };
+        document.body.onclick = function(event){
+        	alert("Body clicked");
+        };
+    </script>
+</body>
+</html>
