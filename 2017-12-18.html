@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="header">
+		<input type="button" id="myBtn">
+	</div>
+	<div class="nav"></div>
+	<div class="article"></div>
+	<div class="footer"></div>
+	<div id="p-1-1">
+		<ul id="p-1">
+			<li id="p">jlz</li>
+		</ul>
+	</div>
+	<form method="post" id="myForm">
+		<ul>
+			<li><input type="radio" name="color" value="red">Red</li>
+			<li><input type="radio" name="color" value="blue">Blue</li>
+			<li><input type="radio" name="color" value="green">Green</li>
+		</ul>
+	</form>
+	<form action="" id="myForm">
+		<input type="text">
+	</form>
+	<script>
+		var btn = document.getElementById("myBtn");
+		btn.addEventListener("click",function(event){
+			alert(this.type);
+			alert(event.type);
+			alert(event.target);
+			alert(event.target === this);
+		},false);
+
+		var handler = function(event){
+			switch(event.type){
+				case 'click':
+				     alert("clicked");
+				     break;
+				case "mouseover":
+				     event.target.style.backgroundColor = "red";
+				     break;
+				case "mouseout":
+				     event.target.style.backgroundColor = " ";
+				     break;
+\			}
+		}
+		btn.onclick = handler;
+		btn.onmouseover = handler;
+		btn.onmouseout = handler;
+
+
+             document.getElementById("p").addEventListener('click', function(event){
+                        console.log("click3");
+                        event.stopPropagation();
+             },false)
+             document.getElementById("p-1").addEventListener('click', function(event){
+                        console.log("click2");
+             },false)
+             document.getElementById("p-1-1").addEventListener('click', function(event){
+                        console.log("click1");
+             },false)
+             document.getElementById("p").addEventListener('click', function(event){
+                        console.log("click3");
+
+             },true)
+             document.getElementById("p-1").addEventListener('click', function(event){
+                        console.log("click2");
+             },true)
+             document.getElementById("p-1-1").addEventListener('click', function(event){
+                        console.log("click1");
+             },true)
+
+             var form = document.getElementById("myForm");
+             var field = form.elements[0];
+
+             field.value = "Another value";
+             alert(field.form ===  form);
+             field.focus();
+             field.disabled = true;
+             field.type = "checkbox";
+              var form = document.getElementById("myForm");
+              var colorFields = form.elements["color"];
+              alert(colorFields.length);
+
+              var firstColorField = colorFields[0];
+              var formField = form.elements[0];
+              alert(firstColorField === formField);
+
+
+
+
+	</script>
+</body>
+
+</html>
