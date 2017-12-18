@@ -89,6 +89,27 @@
         document.body.onclick = function(event){
         	alert("Body clicked");
         };
+	
+	document.getElementById("p").addEventListener('click', function(event){
+                        console.log("click3");
+                        event.stopPropagation();
+             },false)
+             document.getElementById("p-1").addEventListener('click', function(event){
+                        console.log("click2");
+             },false)
+             document.getElementById("p-1-1").addEventListener('click', function(event){
+                        console.log("click1");
+             },false)
+             document.getElementById("p").addEventListener('click', function(event){
+                        console.log("click3");
+                        
+             },true)
+             document.getElementById("p-1").addEventListener('click', function(event){
+                        console.log("click2");
+             },true)
+             document.getElementById("p-1-1").addEventListener('click', function(event){
+                        console.log("click1");
+             },true)
     </script>
 </body>
 </html>
