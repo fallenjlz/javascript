@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select name="location" id="selLocation">
+		<option value="Sunnyvale, CA">Sunnyvale</option>
+		<option value="Los Angeles, CA">Los Angeles</option>
+		<option value="Mountain View, CA">Mountain View</option>
+		<option value="">China</option>
+		<option value="">Australia</option>
+	</select>
+	<script>
+		var selectbox = document.forms[0].elements["location"];
+        var text = selectbox.options[0].firstChild.nodeValue;
+        var value = selectbox.options[0].getAttribute["location"];
+        
+        var selectedOption = selectbox.options[selectbox.selectedIndex];
+        var selectedIndex = selectbox.selectedIndex;
+        var selectedOption = selectbox.options[selectedIndex];
+        alert("Selected index: " + selectedIndex + "\nSelected text: " +selectedOption.tex + "\nSelected value: " + selectedOption.value);
+
+        function getSelectedOptions(selectbox){
+        	var result = new Array();
+        	var option = null;
+
+        	for (var i = 0, len=selectbox.options.length; i < len; i++){
+        		option = selectbox.options[i];
+                if (option.selected){
+                	result.push(option);
+                }
+        	}
+        	return result;
+        }
+
+        var selectbox = document.getElementById("selLocation");
+        var selectedOptions = getSelectedOptions(selectbox);
+        var message = "";
+
+        for(var i = 0, len=selectedOptions.length; i < len; i++){
+        	message += "Selected index: " + selectedOptions[i].index +
+        	"\nSelected text: " + selectedOptions[i].text + 
+        	"\nSelected value: " + selectedOptions[i].value + "\n\n";
+        }
+        alert(message);
+
+        var newOption = document.createElement("option");
+        newOption.appendChild(document.createTextNode("Option text"));
+        newOption.setAttribute("value", "Option value");
+
+        selectbox.appendChild(newOption);
+
+        var newOption = new Option("Option text", "Option value");
+        selectbox.appendChild(newOption);
+
+        var newOption = new Option("Option text", "Option value");
+        selectbox.add(newOption, undefined);
+
+        selectbox.removeChild(selectbox.options[0]);
+        selectbox.remove(0);
+        selectbox.options[0] = null;
+
+        function clearSelectbox(selectbox){
+        	for(var i = 0, len=selectbox.options.length; i < len; i++){
+        		selectbox.remove(i);
+        	}
+        }
+
+        var selectbox1 = document.getElementById("selLocations1");
+        var selectbox2 = document.getElementById("selLocations2");
+        selectbox2.appendChild(selecbox1.options[0]);
+
+        var optionToMove = selectbox.options[1];
+        selectbox.insertBefore(optionToMove, selectbox.options[optionToMove.index-1]);
+
+        var optionToMove = selectbox.options[1];
+        selectbox.insertBefore(optionToMove, selectbox.options[optionToMove.index+2]);
+	</script>
+</body>
+</html>
