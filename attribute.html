@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+     <p id="text" class="text" align="center" data-type="title"></p>
+     <input type="text" name="user" value="user" id="user" validate="true">
+     <script>
+     	//ele.getAttribute("attribute");s
+     	var p = document.getElementById("text");
+     	console.log(p.getAttribute("data-type"));
+     	console.log(p.getAttribute("class"));
+     	var user = document.getElementById("user");
+     	console.log(user.name);	
+     	console.log(user.getAttribute("validate"));
+
+        //ele.setAttribute("attribute", value)
+        p.setAttribute("data-color", "red");
+        p.setAttribute("isRead", "false");
+
+        //ele.removeAttribute("attribute");
+        p.removeAttribute("align");
+     </script>
+</body>
+</html>
