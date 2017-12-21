@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        .current{
+        	background: #ccc;
+        	color:red;
+        }
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		element
+	</div>
+	<ul id="list1">
+		<li><i>html</i></li>
+		<li><b>server</b></li>
+		<li>ui</li>
+	</ul>
+	<ol>
+		<li>javascript1</li>
+		<li>javascript2</li>
+	</ol>
+	<script>
+
+		var box = document.getElementById("box");
+		console.log(box);
+		
+		var lis = document.getElementsByTagName("li");
+		console.log(lis.length);
+        
+        var lis2 = document.getElementById("list1").getElementsByTagName("li");
+        console.log(lis2.length);
+
+        //ele.style.styleName=styleValue
+        box.style.color = '#f00';
+        box.style.fontWeight="bold";
+
+        for(var i=0, len=lis.length; i<len; i++){
+            console.log(lis[i]);
+            lis[i].style.color='#00f';
+            if(i == 0){
+                lis[i].style.backgroundColor="#ccc";
+            }else if(i==1){
+            	lis[i].style.backgroundColor="#666";
+            }else if(i==2){
+                lis[i].style.backgroundColor="#999";
+            }else{
+            	lis[i].style.backgroundColor="#333";
+            }
+        }
+
+        //ele.innerHTML = "html"
+        for(var i=0, len=lis.length; i<len;i++){
+        	console.log(lis[i].innerHTML);
+        	lis[i].innerHTML=lis[i].innerHTML+'program';//lis[i].innerHTML+='program';
+        	lis[1].className="current";
+        }
+
+        //ele.className = " cls";
+        
+
+	</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        .current{
+        	background: #ccc;
+        	color:red;
+        }
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		element
+	</div>
+	<ul id="list1">
+		<li><i>html</i></li>
+		<li><b>server</b></li>
+		<li>ui</li>
+	</ul>
+	<ol>
+		<li>javascript1</li>
+		<li>javascript2</li>
+	</ol>
+	<script>
+
+		var box = document.getElementById("box");
+		console.log(box);
+		
+		var lis = document.getElementsByTagName("li");
+		console.log(lis.length);
+        
+        var lis2 = document.getElementById("list1").getElementsByTagName("li");
+        console.log(lis2.length);
+
+        //ele.style.styleName=styleValue
+        box.style.color = '#f00';
+        box.style.fontWeight="bold";
+
+        for(var i=0, len=lis.length; i<len; i++){
+            console.log(lis[i]);
+            lis[i].style.color='#00f';
+            if(i == 0){
+                lis[i].style.backgroundColor="#ccc";
+            }else if(i==1){
+            	lis[i].style.backgroundColor="#666";
+            }else if(i==2){
+                lis[i].style.backgroundColor="#999";
+            }else{
+            	lis[i].style.backgroundColor="#333";
+            }
+        }
+        //ele.innerHTML = "html"
+        for(var i=0, len=lis.length; i<len;i++){
+        	console.log(lis[i].innerHTML);
+        	lis[i].innerHTML=lis[i].innerHTML+'program';//lis[i].innerHTML+='program';
+        	lis[1].className="current";
+        }
+        //ele.className = " cls";
+	</script>
+</body>
+</html>
