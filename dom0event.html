@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.lock{
+			width:80px;
+			height:20px;
+			text-align:center;
+			background-color:red;
+			line-height: 20px;
+		}
+		.unlock{
+			width:80px;
+			height:20px;
+			text-align: center;
+			background-color: green;
+			line-height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="lock" id="box">lock</div>
+	<script>
+		var box = document.getElementById("box");
+		function clicked(){
+			if(this.className=="lock"){
+				this.className = "unlock";
+				this.innerHTML = "unlock";
+			}else{
+				this.className = "lock";
+				this.innerHTML = "lock";
+			}
+		};
+		box.onclick = clicked;
+	</script>
+</body>
+</html>
