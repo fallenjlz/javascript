@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#phone{		
+			float:left;
+			margin-top:30px;
+			margin-left:30px;
+		}
+		div#tip{
+			float:left;
+			margin-top:30px;
+			margin-left:30px;
+			display:none;
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<div>
+			<input type="text" id="phone" placeholder="Enter a phonenumber">
+		</div>
+		<div id="tip">
+			Enter valid phonenumber
+		</div>
+	</div>
+	<script>
+		var phone = document.getElementById("phone");
+		var tip = document.getElementById("tip");
+		phone.onfocus=function(){
+		    tip.style.display="block";       
+		}
+		phone.onblur=function(){
+			var phoneVal = this.value;
+			if(phoneVal.length == 11 && isNaN(phoneVal)==false){
+                 tip.innerHTML = "YES";
+                 tip.style.color="green";
+			}else{
+				tip.innerHTML = "NO";
+				tip.style.color="red";
+			}
+		}			
+	</script>
+</body>
+</html>
