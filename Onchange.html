@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select name="" id="menu">
+		<option value="">请选择</option>
+		<option value="red">red</option>
+		<option value="blue">blue</option>
+		<option value="yellow">yellow</option>
+		<option value="green">green</option>
+		<option value="pink">pink</option>
+	</select>
+	<script>
+		var menu = document.getElementById("menu");
+		menu.onchange = function(){
+			// var bgcolor = this.value;
+			var bgcolor = menu.options[menu.selectedIndex].value;
+			console.log(bgcolor);
+			if(bgcolor == ""){
+				document.body.style.background = "white";
+			}else{
+				document.body.style.background = bgcolor;
+			}
+		}
+	</script>
+</body>
+</html>
