@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.btn{
+			
+			width:90px;
+			height:30px;
+			text-align: center;
+			line-height: 30px;
+			margin-top:40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="btn" onmouseover="mouseoverFn(this, 'red')" onmouseout="mouseoutFn(this,'green')">start</div>
+	<div class="btn" onmouseover="mouseoverFn(this, 'yellow')" onmouseout="mouseoutFn(this, 'pink')">end</div>
+	<script>
+		 function mouseoverFn(btn,bgcolor){
+		 	btn.style.backgroundColor = bgcolor;
+		 }
+		 function mouseoutFn(btn,bgcolor){
+		 	btn.style.backgroundColor = bgcolor;
+		 }
+	</script>
+</html
