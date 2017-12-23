@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div">div</div>
+	<script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
+	<script>
+		$(function(){
+			var DOMObject = document.getElementById('div');
+			var jQueryObject = $('div');
+
+			console.log(DOMObject);
+			console.log(jQueryObject);
+
+            console.log(DOMObject.nodeType);
+            console.log(jQueryObject.jquery);
+
+            var div = $('<div>Hello</div>');
+            console.log(div);
+            div.appendTo('body');
+
+            var link1 = $('<a>',{
+            	text:'baidu',
+            	href:'http://www.baidu.com',
+            	target:'_blank',
+            	title: 'goto baidu'
+            });
+            link1.appendTo('body');
+ 		})
+	</script>
+</body>
+</html>
