@@ -38,8 +38,17 @@
               console.log($('#box3').parent())
               console.log($('#box3').parents())
               console.log($('#box3').parentsUntil())
-
               console.log($('#info').closest('#info'))
+	      
+	      console.log($('.item4').next('li'))
+	      console.log($('.item4').nextAll('li'))
+	      console.log($('.item4').nextUntil('.item1'))
+
+	      console.log($('.item4').prev('li'))
+	      console.log($('.item4').prevAll('li'))
+	      console.log($('.item4').prevUntil('.item1'))
+
+	      console.log($('.item4').siblings('li'))
 		})
 	</script>
 </body>
