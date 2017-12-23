@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box1">
+		<div id="box2">
+			<div id="box3">
+				<p id="info">Lorem ipsum dolor sit amet.</p>
+			</div>
+			<ul>
+				<li class="item1">item1</li>
+				<li class="item2">item2</li>
+				<li class="item3">item3</li>
+				<li class="item4">item4</li>
+				<li class="item5">item5</li>
+				<li class="item6">item6</li>
+				<li class="item7">item7</li>
+				<li class="item8">item8</li>
+				<li class="item9">item9</li>
+			</ul>
+		</div>
+
+	</div>
+	<script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
+	<script>
+		$(function(){
+              // var element = $('#box').children('div')
+              // var element = $('#info').children()
+              // var element2 = $('#info').contents()
+              // console.log(element)
+              // console.log(element2)
+
+              console.log($('#box3').children('ul'))
+              console.log($('#box3').contents('ul'))
+              console.log($('#box3').parent())
+              console.log($('#box3').parents())
+              console.log($('#box3').parentsUntil())
+
+              console.log($('#info').closest('#info'))
+		})
+	</script>
+</body>
+</html>
