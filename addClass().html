@@ -26,7 +26,7 @@
 	</div>
 	<script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
 	<script>
-		$(function(){
+	   $(function(){
 			//修改元素样式
 			//addClass(names)
             var element = $('#demo')
@@ -40,19 +40,19 @@
             })
 
             $('li').addClass('red')
-            //removeClass(names)
-            //hasClass(naems)
-            //toggleClass()
-            // if(element.hasClass('hide')){
-            // 	element.removeClass('hide');
-            // }else{
-            // 	elsement.addClass('hide')
-            // }
+            removeClass(names)
+            hasClass(naems)
+            toggleClass()
+            if(element.hasClass('hide')){
+            	element.removeClass('hide');
+            }else{
+            	elsement.addClass('hide')
+            }
 
-            // element.toggleClass('hide')
-            // $('li').each(function(index){
-            // 	$(this).toggleClass('red', index % 3 === 0)
-            // })
+            element.toggleClass('hide')
+            $('li').each(function(index){
+            	$(this).toggleClass('red', index % 3 === 0)
+            })
             elemetn.toggleClass('hide red')
 		})
 	</script>
