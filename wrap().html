@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="item"></div>
+	<p>liuzhijian</p>
+	<a href="">link1</a>
+	<a href="">link2</a>
+	<a href="">link3</a>
+	<a href="">link4</a>
+	<a href="">link5</a>
+	<a href="">link6</a>
+	<a href="">link7</a>
+	<a href="">link8</a>
+	<script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
+	<script>
+		$(function(){
+			// var elements = $('li')
+			// elements.append('<a href="http://www.google.com">Google</a>')
+			// elements.prepend('<a href="http://www.google.com">Google</a>')
+			// elements.before('<a href="http://www.google.com">Google</a>')
+			// elements.after('<a href="http://www.google.com">Google</a>')
+
+			// var element = $('ul')
+			// $('h2').appendTo(element)
+
+			//apendTo(target)
+			//prepentTo(target)
+			//insertBefore(target)
+			//insertAfter(target)
+
+
+			//.wrap()
+			//.wrapAll()
+			//.wrapInner()
+			//.uNwrap
+
+			var element = $('p')
+			// element.wrap($('div'))
+			element.wrapInner($('.item'))
+			element.unwrap()
+			// var elements = $('a')
+			// element.wrap(element)
+			// elements.wrapAll(element)
+		})
+	</script>
+</body>
+</html>
