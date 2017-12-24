@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img src="logo.jpg" alt="jQuery logo" id="logo" class="img-jquery" title="jQuety logo"/>
+	<img src="logo.jpg" alt="jQuery logo2" id="logo2" class="img-jquery2" title="jQuery logo2"/>
+
+	<input type="checkbox" id="check" tabindex="1" style="width: 50px;height: 50px;"
+	title="Check this!" description="just a checkbox" checked/>
+	</div>
+	<script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
+	<script>
+		$(function(){
+			var img = document.getElementById('logo')
+			console.log(img.attributes)
+			console.log(img.getAttribute('class'))
+			console.log(img.getAttribute('alt'))
+			console.log(img.getAttribute('title'))
+			console.log(img.getAttribute('src'))
+
+			var checkbox = document.getElementById('check')
+			console.log(checkbox.getAttribute('tabIndex'))
+			console.log(checkbox.tabIndex)
+			console.log(checkbox.getAttribute('style'))
+			console.log(checkbox.style)
+
+			console.log(checkbox.getAttribute('checked'))
+			console.log(checkbox.checked)
+
+
+            // checkbox.title = 'new title';
+            checkbox.setAttribute('title', 'another title');
+			console.log(checkbox.getAttribute('title'))
+			console.log(checkbox.title)
+			console.log(checkbox.getAttribute('title') === checkbox.title)
+
+			//如果attributes是本来在DOM对象中就存在的，attributes和properties的值会同步；
+			//如果attributes是本来在DOM对象中就存在的，但是类型为Boolean，那么attriutes和properties的值不会同步；
+			//如果attributes不是DOM对象内建的属性，attributes和properties的值不会同步
+
+	        checkbox.checked = false;
+	        console.log(checkbox.getAttribute('checked'))
+			console.log(checkbox.checked)
+
+			checkbox.setAttribute('checked', 'flase')
+			console.log(checkbox.getAttribute('checked'))
+			console.log(checkbox.checked)
+
+		    checkbox.description = 'new description'
+		    checkbox.setAttribute('description', 'another description')
+		    console.log(checkbox.getAttribute('description'))
+		    console.log(checkbox.description)
+   
+		    console.log(img.src)
+		    console.log(img.getAttribute('src'))
+
+		    console.log(img.className)
+		    console.log(img.getAttribute('class'))
+
+
+            //操作元素的特性
+		    //attr(name)
+		    //attr(name,value) attr(attributes)
+		    var img = $('img')
+		    var checkbox =$('#check')
+
+            console.log(img.attr('title'))
+            console.log(img.attr('title', '123'))
+            console.log(img.attr('title'))
+
+            console.log(checkbox.attr('checked'))
+            checkbox.checked = true
+            console.log(checkbox.attr('checked'))
+            console.log(checkbox.checked)
+
+            img.attr({
+            	title: 'new title',
+            	alt: 'new alt',
+            	tabIndex: 2
+            })
+
+            img.attr('title', function(index, previousValue){
+            	console.log(previousValue)
+            	return previousValue + '_new_'
+            })
+
+            img.removeAttr('title')
+            img.removeAttr(' title alt tabIndex')
+
+            //操作元素的属性
+            //获取属性的值：prop(name)
+            //设置属性的值:prop(name, value) prop(properties)
+            //删除属性：removeProp(name)
+           var img = $('img')
+           var checkbox = $('#check')
+
+           console.log(checkbox.prop('checked'))
+           console.log(checkbox.checked)
+           console.log(checkbox.get(0).checked)
+           console.log(checkbox.attr('checked'))//属性区分大小写，特性不区分
+           checkbox.removeProp('title')
+           console.log(checkbox.prop('title'))
+           console.log(checkbox.attr('title'))
+
+		})
+	</script>
+</body>
+</html>
