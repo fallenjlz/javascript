@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		p{
+			font-size:12px;
+		}
+	</style>
+</head>
+<body>
+	<p>Life is like riding a bike, To keep your balance, you must keep moving.</p>
+	<div class="item"></div>
+	<script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
+	<script>
+		$(function(){
+			var element = $('p')
+			element.click(function(){
+				$(this).css('fontSize', '+=5')
+			}).data('demo','demo')
+			 element.remove()
+			console.log(element.data())
+			//.remove()
+			//.detach()
+			//.empty()
+		})
+	</script>
+</body>
+</html>
