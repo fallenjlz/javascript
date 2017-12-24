@@ -65,6 +65,14 @@
 				}
 				this.title = this.innerText
 			}))
+		        
+			//.is()
+			//.end()
+			//.addBack()		
+	            console.log($('#box3').find('ul').find('li').end().end())
+		    $('#box3').find('.item5').css('color','blue')
+		    console.log($('#box3').find('.item3').nextUntil('.item5').addBack())
+		    console.log($('#box3').children().is('img'))
 
 		})
 	</script>
