@@ -18,19 +18,19 @@
 	<script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
 	<script>
 		$(function(){
-			// var elements = $('li')
-			// elements.append('<a href="http://www.google.com">Google</a>')
-			// elements.prepend('<a href="http://www.google.com">Google</a>')
-			// elements.before('<a href="http://www.google.com">Google</a>')
-			// elements.after('<a href="http://www.google.com">Google</a>')
+			var elements = $('li')
+			elements.append('<a href="http://www.google.com">Google</a>')
+			elements.prepend('<a href="http://www.google.com">Google</a>')
+			elements.before('<a href="http://www.google.com">Google</a>')
+			elements.after('<a href="http://www.google.com">Google</a>')
 
-			// var element = $('ul')
-			// $('h2').appendTo(element)
+			var element = $('ul')
+			$('h2').appendTo(element)
 
-			//apendTo(target)
-			//prependTo(target)
-			//insertBefore(target)
-			//insertAfter(target)
+			apendTo(target)
+			prependTo(target)
+			insertBefore(target)
+			insertAfter(target)
 
 
 			//.wrap()
@@ -42,9 +42,9 @@
 			// element.wrap($('div'))
 			element.wrapInner($('.item'))
 			element.unwrap()
-			// var elements = $('a')
-			// element.wrap(element)
-			// elements.wrapAll(element)
+			var elements = $('a')
+			element.wrap(element)
+			elements.wrapAll(element)
 		})
 	</script>
 </body>
