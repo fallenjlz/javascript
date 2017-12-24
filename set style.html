@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="demo" class="box">div</div>
+	<script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
+	<script>
+         $(function(){
+         	var element = $('#demo')
+
+         	element.css('width', 200)
+         	element.css({
+         		'background-color': 'red',
+         		height: 200,
+         		border: '10px solid #000',
+         		marginTop: 100,
+         		width: '-=50'
+         	})
+
+         	element.css('height', function(index, value){
+         		console.log(value)
+         		return parseInt(value, 10) + 50
+         	})
+         	console.log(element.css('height'))
+         })
+	</script>
+</body>
+</html>
