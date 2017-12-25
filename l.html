@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<li class="item1">chapter-1</li>
+	<li class="item2">chapter-2</li>
+	<li class="item3">chapter-3</li>
+	<li class="item4">chapter-4</li>
+	<li class="item5">chapter-5</li>
+	<li class="item6">chapter-6</li>
+	<li class="item7">chapter-7</li>
+	<li class="item8">chapter-8</li>
+	<li class="item9">chapter-9</li>
+	<button id="all">read</button>
+	 <script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
+	 <script>
+	 	$(function(){
+	 		$('li').on('markAsRead',function(event){
+	 			console.log('read %o', $(this))
+	 		}).on('click',function(){
+	 			$(this).trigger('markAsRead')
+	 		})
+	 		$('#all').on('click', function(){
+	 			$('li').click()
+	 		})
+	 	})
+	 </script>
+</body>
+</html>
