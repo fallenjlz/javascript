@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<li class="item1">chapter-1</li>
+	<li class="item2">chapter-2</li>
+	<li class="item3">chapter-3</li>
+	<li class="item4">chapter-4</li>
+	<li class="item5">chapter-5</li>
+	<li class="item6">chapter-6</li>
+	<li class="item7">chapter-7</li>
+	<li class="item8">chapter-8</li>
+	<li class="item9">chapter-9</li>
+	<button id="even">click even</button>
+	<button id="odd">click odd</button>
+	<button id="all">click all</button>
+	 <script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
+	 <script>
+	 	$(function(){
+	 		$('li:odd').on('click.even', function(e){
+	 			console.log('%o even', $(this))
+	 		})
+	 		$('li:even').on('click.odd', function(e){
+	 			console.log('%o odd', $(this))
+	 		})
+	 		$('li').eq(0).on('click.even.0', function(e){
+	 			console.log('%o 0', $(this))
+	 		})
+	 		$('#even').click(function(){
+	 			$('li').trigger('click.even')
+	 		})
+	 		$('#odd').click(function(){
+	 			$('li').trigger('click.odd')
+	 		})
+	 	})
+	 </script>
+</body>
+</html>
