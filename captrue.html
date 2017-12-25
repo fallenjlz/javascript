@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id='p-1'>
+		<div id='p-1-1'>
+			<div id='p-1-1-1'>
+				click
+			</div>
+		</div>
+	</div>
+	<script>
+	//DOM 0级 事件模型 只支持一个DOM事件处理函数
+	//DOM 2级 事件模型：
+	//addEvenetListener(eventType, listener, useCapture)
+
+	//attachEvent(eventName,handler) IE9之前的浏览器没有完全支持addEventListener
+	document.getElementById('p-1-1-1').addEventListener('click',function(event){
+		console.log('click-1-1-1')
+	},false)
+	document.getElementById('p-1-1').addEventListener('click',function(event){
+		console.log('click-1-1-1')
+	},false)
+	document.getElementById('p-1').addEventListener('click',function(evnet){
+		console.log('click-1')
+	},false)
+	document.getElementById('p-1-1-1').addEventListener('click',function(event){
+		console.log('click-1-1-1')
+	},true)
+	document.getElementById('p-1-1').addEventListener('click',function(event){
+		console.log('click-1-1-1')
+	},true)
+	document.getElementById('p-1').addEventListener('click',function(evnet){
+		console.log('click-1')
+	},true)
+	</script>
+</body>
+</html>
