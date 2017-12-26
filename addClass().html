@@ -46,14 +46,14 @@
             if(element.hasClass('hide')){
             	element.removeClass('hide');
             }else{
-            	elsement.addClass('hide')
+            	element.addClass('hide')
             }
 
             element.toggleClass('hide')
             $('li').each(function(index){
             	$(this).toggleClass('red', index % 3 === 0)
             })
-            elemetn.toggleClass('hide red')
+            element.toggleClass('hide red')
 		})
 	</script>
 </body>
