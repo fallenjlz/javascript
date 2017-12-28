@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.pulled{
+			background-color: #e5e5e5;
+			position:absolute;
+			width:145px;
+			top:-20px;
+			right:-180px;
+			padding:12px 5px 12px 10px;
+			font:italic 1.4em "Times new Roman", Times, serif;
+		}
+		#box1{
+			width:100px;
+			height:100px;
+			background-color: yellow;
+		}
+		#box2{
+			width:100px;
+			height:100px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		<span class="pull-quote">
+			It is law of nature
+		<span class="drop">
+			with us
+		</span>
+		that a male child shall have
+		<strong>
+			one more side
+		</strong>
+		   than his father
+	    </span>,
+	     so that each generation shall rise (as a rule) one step in
+         the scale of development and nobility. Thus the son of a
+         Square is a Pentagon; the son of a Pentagon, a Hexagon; and
+         so on.
+    </p>
+    <ul>
+    	<li id='item1'>item1</li>
+    	<li></li>
+    	<li> click </li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    </ul>
+    <div id="outside">
+    	<div id='inside1'>
+    		<div id='inside2'></div>
+    	</div>
+    </div>
+   <div id="box1">good</div>
+   <div id="box2">bad</div>
+    <script src="C:\Users\Happv\Desktop\jquery-3.2.1.js"></script>
+    <script>
+    	$(function(){
+    		$('span.pull-quote').each(function(index){
+    			var p = $(this).parent('p')
+    			$(this).parent('p').css('position','relative')
+
+    			$(this).clone().addClass('pulled').prependTo(p)
+    			var copy = $(this).clone()
+    			copy.addClass('pulled').find('span.drop').end().prependTo(p)
+    			$('#item1').text('<strong>hello world</strong>')
+    			$('#item1').html('<strong>hello world</strong>')
+    			$('ul').find(':eq(0)').css('color','red')
+    			$('li:first').on('click.first',function(e){
+    				console.log('first_event')
+    			})
+    			$('ul').find(':eq(2)').on('click',function(e){
+    				$('li').trigger('click.first')
+    			})
+    			$('<span>liuzji</span>').insertBefore($('#item1'))
+    			$('<span>liuzji</span>').insertAfter($('#item1'))
+
+
+                $('div').each(function(index){
+                	console.log(index + ":"+ $(this))
+                })
+                $('li').map(function(index){
+                	console.log(index +":" +$(this).text())
+                })
+                $('li:first').wrap($('div#box1'))
+
+                
+    	})
+    	})
+    </script>
+</body>
+</html>
