@@ -1,0 +1,67 @@
+*{
+	margin:0px;
+	padding: 0px;
+	font-family: "Microsoft YaHei";
+}
+
+.clear{
+	clear:both;
+}
+
+.box{
+	width:1200px;
+	height:520px;
+	margin: 60px auto;
+}
+
+.header{
+	width: 1200px
+	height: 60px;
+}
+
+.header a div{
+	width:298px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 22px;
+	color:#666;
+    float: left;
+    font-weight: bold;
+    border:1px solid #666;
+}
+
+
+
+.banner{
+	width:1200px;
+	height: 460px;
+	overflow: hidden;
+}
+
+.banner .bg{
+	width:1200px;
+	height: 460px;
+    overflow: hidden;
+    display:none;
+}
+
+.banner .slide1{
+	background: url(../img/1.jpg);
+}
+
+.banner .slide2{
+	background: url(../img/2.jpg);
+}
+
+.banner .slide3{
+	background: url(../img/3.jpg);
+}
+
+.banner .slide4{
+	background: url(../img/4.jpg);
+}
+
+.banner .slide-active{
+	display: block;
+}
