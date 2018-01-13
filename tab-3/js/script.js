@@ -40,6 +40,7 @@ window.onload= function (){
     }
     lis[curindex].className='select';
     divs[curindex].style.display="block";
+    index = curindex;
  }
 }
 
