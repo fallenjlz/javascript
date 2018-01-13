@@ -20,6 +20,11 @@ window.onload= function (){
     	lis[i].onmouseout=function(){
 			timer=setInterval(autoPlay,2000);
     	}
+    }    
+	
+  if(timer){
+    	clearInterval(timer);
+    	timer=null;
     }
 	//添加定时器，改变当前高亮显示的索引
 	timer=setInterval(autoPlay,2000);
