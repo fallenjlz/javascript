@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    .styleClass{
+	    	display:table-cell;
+	    	border:1px solid black;
+	    	padding:20px;
+	    	text-align:center;
+	    }
+
+	    .click{
+	    	display:table-cell;
+	    	border:5px solid black;
+	    	padding:20px;
+	    	text-align:center;
+	    }
+
+	</style>
+</head>
+<body>
+	<input type="button" value="Click Me" id="btn">
+	<div class="styleClass" onclick="alert('divElement')">
+		divElement
+		<span class="styleClass" onclick="alert('spanElement')">
+			spanElement
+			<input type="button" value="Click" onclick="alert('input')">
+		</span>
+	</div>
+	<div id="div1" class="click">
+		Div1
+		<div id="div2" class="click">
+			Div2
+			<div id="div3" class="click">
+				Div3
+			</div>
+		</div>
+	</div>
+    <script>
+    	var btn = document.getElementById("btn");
+    	btn.onclick = getEventDetails;
+    	btn.onmouseover = getEventDetails;
+    	btn.onmouseout = getEventDetails;
+    	function getEventDetails(event){
+    		var eventDetails = "Event.name: " + event.target.type +"<br> X: "+ event.clientX
+    		                   + "<br> Y:" + event.clientY + "<br />TagetType: " + event.target.type 
+    		                   +"<br /> Target Tag Name: " + event.target.tagName;
+    		console.log(eventDetails);
+    	}
+
+    	var divElements = document.getElementsByTagName('div');
+    	for(var i=0;i<divElements.length;i++){
+    		divElements[i].onclick = function(event){
+    			event = event || window.event;
+    			if(event.stopPropagation()){
+    				event.stopPropagation();
+    			}else{
+    				cancelBubble = "true";
+    			}
+    			this.style.borderColor = "red";
+    			alert(this.getAttribute('id') + "border color changed");
+    		}
+    	}
+
+    </script>
+	
+</body>
+</html>
